@@ -1,4 +1,12 @@
-(function (Backbone, _) {
+(function(root, factory) {
+  if (typeof define === "function" && define.amd) {
+    define(["backbone", "underscore"], factory);
+  } else if (typeof exports !== "undefined") {
+    return module.exports = factory(require("backbone"), require("underscore"));
+  } else {
+    factory(root.Backbone, root._);
+  }
+})(this, function(Backbone, _) {
   var OriginalBackboneModel = Backbone.Model;
 
   Backbone.Model = OriginalBackboneModel.extend({
@@ -52,4 +60,4 @@
       return offlineAttributes;
     }
   });
-})(Backbone, _);
+});
