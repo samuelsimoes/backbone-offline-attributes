@@ -16,6 +16,9 @@
     "chai": "*",
     "mocha": "*",
     "grunt-mocha": "*",
-    "grunt-settings": "*"
+    "grunt-settings": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*"
   }
 }
