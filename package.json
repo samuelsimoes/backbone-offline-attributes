@@ -1,0 +1,21 @@
+{
+  "name": "backbone_offline_attributes",
+  "version": "0.0.1",
+  "description": "Stores on localStorage offline attributes for your Backbone Models.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samuelsimoes/backbone-offline-attributes"
+  },
+  "author": {
+    "name": "Samuel Simões",
+    "email": "slip.cm@gmail.com"
+  },
+  "devDependencies": {
+    "bower": "*",
+    "grunt": "*",
+    "chai": "*",
+    "mocha": "*",
+    "grunt-mocha": "*",
+    "grunt-settings": "*"
+  }
+}

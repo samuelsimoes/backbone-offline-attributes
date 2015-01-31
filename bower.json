@@ -1,0 +1,17 @@
+{
+  "name": "backbone.offline_attributes",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Samuel Simões",
+    "email": "slip.cm@gmail.com"
+  },
+  "dependencies": {
+    "backbone": "*",
+    "underscore": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
+  }
+}
