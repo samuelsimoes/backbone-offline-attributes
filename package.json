@@ -1,6 +1,6 @@
 {
   "name": "backbone.offline_attributes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stores on localStorage offline attributes for your Backbone Models.",
   "repository": {
     "type": "git",

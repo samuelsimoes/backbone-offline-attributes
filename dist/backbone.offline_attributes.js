@@ -1,4 +1,4 @@
-/*! backbone.offline_attributes v0.0.1 | (c) 2014, 2015 Samuel Simões |  */
+/*! backbone.offline_attributes v0.0.2 | (c) 2014, 2015 Samuel Simões |  */
 (function(root, factory) {
   if (typeof define === "function" && define.amd) {
     define(["backbone", "underscore"], factory);
@@ -12,7 +12,9 @@
 
   Backbone.Model = OriginalBackboneModel.extend({
     constructor: function(attributes, options) {
-      OriginalBackboneModel.call(this, attributes, options);
+      OriginalBackboneModel.call(this,
+                                attributes,
+                                _.defaults({}, options, { skipOfflineAttributes: true }));
 
       // fetch the previous stored offiline attributes
       var currentOfflineAttributes = this.currentStoredOfflineAttributes(),
@@ -30,7 +32,15 @@
     set: function(key, val, options) {
       var originalReturn = OriginalBackboneModel.prototype.set.apply(this, arguments);
 
-      this.storeOfflineAttributes();
+      if (_.isObject(key)) {
+        options = val;
+      }
+
+      options = options ? options : {};
+
+      if (!options.skipOfflineAttributes) {
+        this.storeOfflineAttributes();
+      }
 
       return originalReturn;
     },
